@@ -2,14 +2,13 @@
 
 {% block title %}
    <title>User</title>
-   <style>
+<style>
     body{
-    background: #333;
+    background: #c7b39b url("images/jobs.png");
     }
     .colortext{color:
      #fc0;
-    }
-    </style>
+    }</style>
 
 
 {% endblock %}
@@ -17,12 +16,15 @@
 
 
 {% block content %}
-<p>
-    <span class="colortext">  Jobs  </span>
-</p>
-    {% if user_i %}
-        {% for a in user_i %}
-            <a href="{% url 'user_page' a.id %}">{{ a.job_title }}<br></a>
+
+<hr>
+<p align="center"><span class="colortext">  Jobs  </span></p>
+<hr>
+<p>&nbsp; </p>
+<footer>Здесь располагаетс содержимое нового тега footer</footer>
+ {% if user_i %}
+    {% for a in user_i %}
+<a href="{% url 'user_page' a.id %}">{{ a.job_title }}<br></a>
         {% endfor %}
     {% else %}
         Вакансии не найдены...
