@@ -4,7 +4,7 @@
    <title>User</title>
 <style>
     body{
-    background: #c7b39b;
+    background: #333;
     }
     .colortext{color:
      #fc0;
@@ -21,7 +21,9 @@
 <hr>
 <p align="center"><span class="colortext">  Jobs  </span></p>
 <hr>
-
+<form action="{% url 'search_results' %}" method="get">
+  <input name="q" type="text" placeholder="Search...">
+</form>
 {% if user_i %}
     {% for a in user_i %}
     <a href="{% url 'user_page' a.id %}">{{ a.job_title }}<br></a>
@@ -29,15 +31,5 @@
     {% else %}
         Вакансии не найдены...
     {% endif %}
-
-
-
-
-
-
-
-
-
-
 
 {% endblock %}

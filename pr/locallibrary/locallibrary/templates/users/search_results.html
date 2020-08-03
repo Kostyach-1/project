@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+   <title>User</title>
+
+
+
+{% endblock %}
+
+
+
+{% block content %}
+
+
+
+    <ul>
+      {% if object_list %}
+          {% for user in object_list %}
+            <li>
+                {{ user.job_title }}, {{ user.user_company }}
+            </li>
+      {% endfor %}
+      {% else %}
+      Ничего не найдено...
+      {% endif %}
+    </ul>
+
+{% endblock %}

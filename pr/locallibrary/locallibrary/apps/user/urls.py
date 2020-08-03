@@ -21,7 +21,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home_page),
     path('<int:user_id>/', views.user_page, name = 'user_page'),
-
+    path ('create_user/', views.create_user),
+    path('search/', views.SearchResultsView.as_view(), name='search_results'),
+    path('success/', views.home_page)
 
 
 ]
